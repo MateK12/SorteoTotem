@@ -1,0 +1,49 @@
+.wheel {
+    background: radial-gradient(circle, #4c4c4c 10%, #333333 100%);
+    border: 10px solid #8c8c8c;
+    border-radius: 50%;
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.number {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    position: absolute;
+    transform: rotate(0deg);
+    transition: transform 5s cubic-bezier(0.24, 1.42, 0.65, 0.92);
+}
+
+.red {
+    background: #e74c3c;
+    color: white;
+}
+
+.black {
+    background: #34495e;
+    color: white;
+}
+
+.green {
+    background: #2ecc71;
+    color: white;
+}
+
+/* Highlighted sector for a more realistic look */
+.highlighted {
+    background: #ffbb00;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: rotate(0deg);
+    transition: transform 5s cubic-bezier(0.24, 1.42, 0.65, 0.92);
+}
+
+.spinning {
+    animation: spin 5s cubic-bezier(0.24, 1.42, 0.65, 0.92) infinite;
+}

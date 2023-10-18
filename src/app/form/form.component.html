@@ -1,0 +1,50 @@
+<form id="contForm" nz-form class="login-form" [formGroup]="myform">
+    <img src="../../assets/Kristich150x150.png" alt="">
+    <nz-form-item>
+        <nz-form-control nzErrorTip="Porfavor, ingresa tu nombre y apellido">
+            <nz-form-label>
+                Nombre y apellido
+            </nz-form-label>
+            <nz-input-group nzPrefixIcon="user">
+                <input type="text" nz-input formControlName="name" placeholder="Nombre" />
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control nzErrorTip="Porfavor, ingresa tu D.N.I.">
+            <nz-form-label>D.N.I</nz-form-label>
+            <nz-input-group nzPrefixIcon="number">
+                <input type="number" nz-input formControlName="dni" placeholder="DNI" />
+            </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control>
+            <nz-form-label>
+                Ubicacion
+            </nz-form-label>
+            <nz-select formControlName="location" nzShowSearch nzAllowClear nzPlaceHolder="Ubicacion">
+                <nz-option nzLabel="Fuente Mayor Tunuyan" nzValue="Fuente Mayor Tunuyan"></nz-option>
+                <nz-option nzLabel="Fuente Mayor Terminal" nzValue="Fuente Mayor Terminal"></nz-option>
+                <nz-option nzLabel="Fuente Mayor Centro" nzValue="Fuente Mayor Centro"></nz-option>
+                <nz-option nzLabel="Casino Tunuyan" nzValue="Casino Tunuyan"></nz-option>
+                <nz-option nzLabel="Casino San Martin" nzValue="Casino San Martin"></nz-option>
+            </nz-select>
+        </nz-form-control>
+    </nz-form-item>
+
+    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'"
+        (click)="OnSubmit()">Registrarse</button>
+    <nz-modal [nzVisible]="isVisible" nzTitle="Error" (nzOnCancel)="OnCloseModal()" (nzOnOk)="OnCloseModal()">
+        <ng-container *nzModalContent>
+            <h4 style="color: red;">Hubo un error</h4>
+            <h5>Porfavor, complete todos los campos antes de registrarse</h5>
+        </ng-container>
+    </nz-modal>
+    <nz-modal [nzVisible]="isSuccessful" nzTitle="Error" (nzOnCancel)="OnCloseModal()" (nzOnOk)="OnCloseModal()">
+        <ng-container *nzModalContent>
+            <h4>Usuario registrado con exito</h4>
+            <h5>¡Buena suerte!</h5>
+        </ng-container>
+    </nz-modal>
+</form>

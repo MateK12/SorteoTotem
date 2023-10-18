@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sorteo Fiesta de Empleados</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="roulette-wheel">
+            <div class="wheel" [ngClass]="{ 'spinning': isSpinning }">
+                <!-- The roulette wheel numbers and colors -->
+                <div class="number red">1</div>
+                <div class="number black">2</div>
+                <!-- ... Add all 37 (0-36) numbers here ... -->
+                <div class="number red">36</div>
+                <div class="number green">0</div>
+                <div class="number highlighted"></div>
+            </div>
+            <button (click)="spinWheel()" [disabled]="isSpinning">Spin</button>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
